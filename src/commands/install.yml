@@ -1,0 +1,6 @@
+description: >
+  Install Bun within a build.
+steps:
+  - run:
+      name: Install/Verify Bun
+      command: <<include(scripts/install.sh)>>

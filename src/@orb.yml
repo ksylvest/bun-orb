@@ -1,7 +1,7 @@
 version: 2.1
 
 description: >
-  Easily install for building or testing your project [bun.sh](https://bun.sh/).
+  Install [Bun](https://bun.sh/) for building or testing your project .
 
 display:
   home_url: "https://github.com/ksylvest/bun-orb"

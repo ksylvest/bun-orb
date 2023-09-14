@@ -1,13 +1,19 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  The steps needed to use Bun on CircleCI
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    <orb-name>: <namespace>/<orb-name>@1.0.0
+  jobs:
+    example:
+      docker:
+        - image: cimg/base:stable
+      steps:
+        - checkout
+        - bun/install
+        - run: bun install
+        - run: bun run main.ts
   workflows:
-    use-my-orb:
+    main:
       jobs:
-        - <orb-name>/<job-name>
+        - example

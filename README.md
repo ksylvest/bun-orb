@@ -11,16 +11,19 @@ A [CircleCI Orb](https://circleci.com/orbs/) to simplify the installation of [Bu
 
 ```yaml
 version: 2.1
-
 orbs:
-  bun: ksylvest/bun@1.0.0
-
+bun: ksylvest/bun@1.0.1
 jobs:
-  test:
-    executor: ...
+example:
+    docker:
+    - image: cimg/base:stable
     steps:
-      - checkout
-      - bun/install
-      - run: bun install
-      - run: bun run main.ts
+    - checkout
+    - bun/install
+    - run: bun install
+    - run: bun run main.ts
+workflows:
+main:
+    jobs:
+    - example
 ```
